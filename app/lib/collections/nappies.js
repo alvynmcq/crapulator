@@ -9,8 +9,24 @@ Nappies.attachSchema(new SimpleSchema({
     nappytype: {
         type: String,
         label: "Nappy Type",
-        allowedValues: ['Wet', 'Small Poo', 'Normal Poo', 'Holy Fuck Poo'],
+        allowedValues: ['Dry', 'Wet', 'Small Poo', 'Normal Poo', 'Poo Everywhere'],
     },
+    createdAt: {
+        type: Date,
+        autoform: {
+            type: "hidden",
+            label: false
+        },
+        autoValue: function() {
+          if (this.isInsert) {
+            return new Date;
+          } else if (this.isUpsert) {
+            return {$setOnInsert: new Date};
+          } else {
+            this.unset();
+          }
+        }
+    }
 }));
 
 if (Meteor.isServer) {

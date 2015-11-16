@@ -4,6 +4,9 @@ Router.configure({
   notFoundTemplate: 'NotFound'
 });
 
+Router.route('/', {
+  name: 'home'
+});
 
 Router.route('/nappies/create', {
   name: 'createNappy',
