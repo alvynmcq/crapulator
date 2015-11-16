@@ -1,0 +1,6 @@
+<template name="EditNappy">
+  <h1>Edit</h1>
+  {{> quickForm collection="Nappies" doc=this id="editNappyForm" type="update" buttonContent="Update"}}
+  <hr>
+  {{> quickRemoveButton collection="Nappies" _id=this._id beforeRemove=beforeRemove class="btn btn-danger"}}
+</template>
