@@ -1,22 +1,4 @@
 <template name="ListNappies">
   <h1>Nappy List</h1>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Nappy Type</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each nappies}}
-        <tr>
-          <td>{{baby}}</td>
-          <td>{{nappytype}}</td>
-          <td>{{formatDate createdAt}}</td>
-          <td>{{#linkTo route="editNappy"}}<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>{{/linkTo}}</td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
+  {{> reactiveTable class="table table-responsive table-hover" settings=settings}}
 </template>

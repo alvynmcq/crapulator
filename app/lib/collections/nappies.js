@@ -21,7 +21,7 @@ Nappies.attachSchema(new SimpleSchema({
           if (this.isInsert) {
             return new Date;
           } else if (this.isUpsert) {
-            return {$setOnInsert: new Date};
+            return {$setOnInsert: moment(date)};
           } else {
             this.unset();
           }
