@@ -10,6 +10,9 @@ Template.ListNappies.events({
 Template.ListNappies.helpers({
   nappies: function() {
     return Nappies.find();
+  },
+  formatDate: function(date) {
+    return moment(date).format('DD-MM-YYYY');
   }
 });
 
